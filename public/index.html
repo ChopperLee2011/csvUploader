@@ -1,0 +1,70 @@
+<html ng-app="fileUpload">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>File Uploader</title>
+    <link rel="stylesheet" href="/lib/bootstrap.css">
+    <link rel="author" href="humans.txt">
+    <style type="text/css">
+    div#center {
+        width: 200px;
+        height: 100px;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .drop-box {
+        background: #F8F8F8;
+        border: 5px dashed #DDD;
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        padding-top: 35px;
+    }
+    .drop-box.dragover {
+        border: 5px dashed red
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container" ng-controller="fileUploadCtl">
+        <div id="center">
+            <div>
+                <label for="fileToUpload">Select a File to Upload.</label>
+                <input type="file" ng-file-select="onFileSelect($files)" data-multiple="true" title="select file" onclick="this.value = null">
+                <!-- Click here to select file -->
+                <br/>
+            </div>
+            <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files)" ng-file-drop-available="dropSupported=true" ng-file-drag-over-class="dragOverClass($event)" ng-file-drag-over-delay="100">Or drop files
+                <div>here.</div>
+            </div>
+            <div ng-show="!dropSupported">HTML5 Drop File is not supported on this browser</div>
+            <br/>Progress:
+            <br/>
+            <br/>
+            <div ng-show="selectedFiles != null">
+                <div class="sel-file" ng-repeat="f in selectedFiles">
+                    {{($index + 1) + '.'}}
+                    <img ng-show="dataUrls[$index]" ng-src="{{dataUrls[$index]}}">
+                    <button class="button" ng-click="start($index)" ng-show="progress[$index] < 0">Start</button>
+                    <span class="progress" ng-show="progress[$index] >= 0">
+                        <div style="width:{{progress[$index]}}%">{{progress[$index]}}%</div>
+                    </span>
+                    <button class="button" ng-click="abort($index)" ng-show="hasUploader($index) && progress[$index] < 100">Abort</button>
+                    {{f.name}} - size: {{f.size}}B - type: {{f.type}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/lib/ng-file-upload/angular-file-upload-shim.min.js"></script>
+    <script src="/lib/angular.min.js" type="text/javascript"></script>
+    <script src="/lib/ng-file-upload/angular-file-upload.min.js"></script>
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
