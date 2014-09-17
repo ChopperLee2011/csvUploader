@@ -1,0 +1,22 @@
+2014-04-04 17:03:47 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+
+2014-04-04 17:04:03 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "chopper"
+
+2014-04-04 17:04:29 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "dbuser"
+
+2014-04-04 17:05:10 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "dbuser"
+
+2014-04-04 17:07:56 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "dbuser"
+
+2014-04-04 17:18:10 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "dbuser"
+
+2014-04-04 17:18:30 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "dbuser"
+
+2014-04-04 17:30:52 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "dbuser"
+FATAL:  password authentication failed for user "dbuser"
+
+2014-04-04 17:32:16 ERROR  : Error connecting to the server: fe_sendauth: no password supplied
+
+2014-04-04 17:39:18 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "dbuser"
+FATAL:  password authentication failed for user "dbuser"
+
